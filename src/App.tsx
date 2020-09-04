@@ -1,7 +1,7 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import Store from '~/Store';
-import Navigator from '~/navigation'
+import Navigator from '~/navigation/Navigator'
 
 declare const global: {HermesInternal: null | {}};
 

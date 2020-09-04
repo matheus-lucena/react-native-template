@@ -1,3 +1,9 @@
 //STACKS
 export const APPSTACK = 'APPSTACK'
 export const AUTHSTACK = 'AUTHSTACK'
+
+//MAIN
+export const DASHBOARDSCREEN = 'DASHBOARDSCREEN'
+
+//AUTH
+export const LOGINSCREEN = 'LOGINSCREEN'
