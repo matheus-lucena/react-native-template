@@ -31,10 +31,13 @@ const setLanguageToI18n = () => {
   const language = getLanguageByDevice()
   const translateNormalize = normalizeTranslate[language]
   const iHaveThisLanguage = I18n.translations.hasOwnProperty(translateNormalize)
+  I18n.fallbacks = 'pt_BR'
+  I18n.defaultLocale = 'pt_BR'
   iHaveThisLanguage
     ? I18n.locale = translateNormalize
     : I18n.defaultLocale = 'en_US'
 }
+
 
 setLanguageToI18n()
 
