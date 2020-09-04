@@ -1,10 +1,11 @@
 import React from 'react';
 import { Text, View } from 'react-native';
+import { translate } from '~/locales'
 
 const Login = () => {
   return (
       <View>
-        <Text>Login</Text>
+        <Text>{translate('hello')}</Text>
       </View>
   );
 };
