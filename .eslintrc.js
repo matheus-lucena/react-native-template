@@ -25,7 +25,7 @@ module.exports = {
     '@typescript-eslint',
   ],
   rules: {
-    'linebreak-style' : ['error','windows'],
+    'linebreak-style': ["error", "unix"],
     'react/jsx-filename-extension': ["error", { "extensions": [".js", ".jsx", '.ts', '.tsx'] }],
     'import/extensions': [
       "error",

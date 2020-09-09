@@ -1,4 +1,4 @@
-import {Effect} from '@redux-saga/types';
+import { Effect } from '@redux-saga/types';
 
 import {
   REDUCER_FETCH_MAIN_DATA,
@@ -6,7 +6,8 @@ import {
 } from '~/redux/main/Constants';
 
 const INITIAL_STATE = {
-  loading:false
+  loading: false,
+  message: undefined,
 };
 
 export default (state = INITIAL_STATE, action: Effect) => {
