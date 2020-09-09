@@ -1,4 +1,4 @@
-import {Effect} from '@redux-saga/types';
+import { Effect } from '@redux-saga/types';
 
 import {
   REDUCER_FETCH_AUTH_DATA,
@@ -6,7 +6,7 @@ import {
 } from '~/redux/auth/Constants';
 
 const INITIAL_STATE = {
-  isAuthenticated:false
+  isAuthenticated: false,
 };
 
 export default (state = INITIAL_STATE, action: Effect) => {

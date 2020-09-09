@@ -3,45 +3,36 @@ module.exports = {
     es6: true,
     node: true,
   },
-  plugins: ["import","react"],
+  plugins: ['import', 'react', '@typescript-eslint', '@typescript-eslint/eslint-plugin', 'redux-saga'],
   extends: [
     'plugin:react/recommended',
-    'airbnb'
+    'airbnb',
+    'plugin:redux-saga/recommended',
   ],
   globals: {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly',
   },
   parser: '@typescript-eslint/parser',
-  parserOptions: {
-    ecmaFeatures: {
-      jsx: true,
-    },
-    ecmaVersion: 2018,
-    sourceType: 'module',
-  },
-  plugins: [
-    'react',
-    '@typescript-eslint',
-  ],
   rules: {
-    'linebreak-style': ["error", "unix"],
-    'react/jsx-filename-extension': ["error", { "extensions": [".js", ".jsx", '.ts', '.tsx'] }],
+    'linebreak-style': ['error', 'windows'],
+    'react/jsx-filename-extension': ['error', { extensions: ['.js', '.jsx', '.ts', '.tsx'] }],
     'import/extensions': [
-      "error",
-      "ignorePackages",
+      'error',
+      'ignorePackages',
       {
-        "js": "never",
-        "jsx": "never",
-        "ts": "never",
-        "tsx": "never"
-      }
-   ],
-   "no-use-before-define": ["error", { "variables": false }]
+        js: 'never',
+        jsx: 'never',
+        ts: 'never',
+        tsx: 'never',
+      },
+    ],
+    'no-unused-expressions': ["error", { "allowTaggedTemplates": true }]
   },
   settings: {
-    "import/resolver": {
-      typescript: {} // this loads <rootdir>/tsconfig.json to eslint
+    'import/resolver': {
+      typescript: {}
     },
   },
+
 };
