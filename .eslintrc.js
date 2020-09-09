@@ -3,10 +3,10 @@ module.exports = {
     es6: true,
     node: true,
   },
-  plugins: ["import"],
+  plugins: ["import","react"],
   extends: [
     'plugin:react/recommended',
-    'airbnb',
+    'airbnb'
   ],
   globals: {
     Atomics: 'readonly',
@@ -26,7 +26,7 @@ module.exports = {
   ],
   rules: {
     'linebreak-style' : ['error','windows'],
-    'react/jsx-filename-extension': [2, { 'extensions': ['.js', '.jsx', '.ts', '.tsx'] }],
+    'react/jsx-filename-extension': ["error", { "extensions": [".js", ".jsx", '.ts', '.tsx'] }],
     'import/extensions': [
       "error",
       "ignorePackages",
@@ -36,7 +36,8 @@ module.exports = {
         "ts": "never",
         "tsx": "never"
       }
-   ]
+   ],
+   "no-use-before-define": ["error", { "variables": false }]
   },
   settings: {
     "import/resolver": {
