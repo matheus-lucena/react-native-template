@@ -26,32 +26,39 @@ type Props = StoreProps & DispatchProps
 
 const Navigator = (props:Props) => {
   const { isAuthenticated, loading, message } = props;
-  return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName={AUTHSTACK} headerMode="none">
-        {!isAuthenticated && <Stack.Screen component={AuthStack} name={AUTHSTACK} />}
-        {isAuthenticated && <Stack.Screen component={AppStack} name={APPSTACK} />}
-      </Stack.Navigator>
-      {loading && (
-      <Modal
-        visible
-        transparent
-        animationType="none"
-      >
-        <View style={styles.modalBackground}>
-          <View style={styles.activityIndicatorWrapper}>
-            <ActivityIndicator
-              size="large"
-              animating={loading}
-            />
-            <Text>Aguarde</Text>
+  const renderNavigator = () => {
+    return (
+      <NavigationContainer>
+        <Stack.Navigator initialRouteName={AUTHSTACK} headerMode="none">
+          {!isAuthenticated && <Stack.Screen component={AuthStack} name={AUTHSTACK} />}
+          {isAuthenticated && <Stack.Screen component={AppStack} name={APPSTACK} />}
+        </Stack.Navigator>
+        {loading && (
+        <Modal
+          visible
+          transparent
+          animationType="none"
+        >
+          <View style={styles.modalBackground}>
+            <View style={styles.activityIndicatorWrapper}>
+              <ActivityIndicator
+                size="large"
+                animating={loading}
+              />
+              <Text>Aguarde</Text>
+            </View>
           </View>
-        </View>
-      </Modal>
-      )}
+        </Modal>
+        )}
+      </NavigationContainer>
+    );
+  }
+  return (
+    <View style={{flex:1}}>
+      {renderNavigator()}
       <Message message={message} />
-    </NavigationContainer>
-  );
+    </View>
+  )
 };
 
 const styles = StyleSheet.create({

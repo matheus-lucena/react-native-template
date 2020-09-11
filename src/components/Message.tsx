@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { Text, View } from 'react-native';
+import { Platform, StyleSheet, Text, View } from 'react-native';
+import { SizeNormalize } from '~/assets/SizeNormalize';
 
 type StoreProps = {
     message:string
@@ -10,7 +11,8 @@ type Props = StoreProps
 const Message = (props: Props) => {
   const [showingMessage, SetShowingMessage] = useState<string|undefined>(undefined);
   const { message } = props;
-  const time = 5000;
+  const time = 2000;
+
   useEffect(() => {
     if (message) {
       SetShowingMessage(message);
@@ -19,16 +21,29 @@ const Message = (props: Props) => {
       }, time);
     }
   }, [message]);
-  if (showingMessage) {
+  if(showingMessage)
     return (
-      <View>
-        <Text>
-          {showingMessage}
-        </Text>
+      <View style={styles.container}>
+          <Text>
+            {showingMessage}
+          </Text>
       </View>
-    );
-  }
-  return <View />;
+  );
+  return <View/>
 };
+
+const styles = StyleSheet.create({
+  container: {
+    position: 'absolute',
+    left: 0,
+    right: 0,
+    bottom: 0,
+    borderWidth:1,
+    flexDirection:'row',
+    height:SizeNormalize(60),
+    alignItems:'center',
+    justifyContent:'center'
+  }
+});
 
 export default (Message);

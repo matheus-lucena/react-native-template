@@ -216,4 +216,11 @@ task copyDownloadableDepsToLibs(type: Copy) {
     into 'libs'
 }
 
+project.ext.envConfigFiles = [
+    debug: ".env.development",
+    release: ".env.production",
+    anothercustombuild: ".env",
+]
+
 apply from: file("../../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesAppBuildGradle(project)
+apply from: project(':react-native-config').projectDir.getPath() + "/dotenv.gradle"
