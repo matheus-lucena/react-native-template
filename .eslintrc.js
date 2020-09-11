@@ -27,7 +27,7 @@ module.exports = {
         tsx: 'never',
       },
     ],
-    'no-unused-expressions': ["error", { "allowTaggedTemplates": true }]
+    'no-unused-expressions': ["error", { "allowTaggedTemplates": true }],
   },
   settings: {
     'import/resolver': {
