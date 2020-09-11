@@ -1,8 +1,7 @@
 import * as Keychain from 'react-native-keychain';
 import { UserCredentials } from 'react-native-keychain';
-import { call, put } from "redux-saga/effects";
-import { translate } from '~/locales';
-import { REDUCER_FETCH_MAIN_DATA } from "~/redux/main/Constants";
+import { call } from "redux-saga/effects";
+import { ROUTE_LOGIN } from '~/routes';
 import { getAPICall } from '../WorkerApi';
 
 export function* getToken(){
@@ -18,14 +17,5 @@ export function* setToken(token: string){
     }
 }
 export function* WorkerRefreshAuth(){
-    yield call(getAPICall,'','GET')
-    /*console.log(yield call(getToken))
-    if(yield call(setToken,"TESTE TOKEN")){
-
-    }else{
-        yield put({
-            type:REDUCER_FETCH_MAIN_DATA,
-            payload:{message:translate('failure_login')}
-        })
-    }*/
+  
 }

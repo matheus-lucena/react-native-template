@@ -1,3 +1,1 @@
-import { server } from "~/Globals";
-
-export const ROUTE_GET = "ROUTE"
+export const ROUTE_LOGIN = "login"
